@@ -9,8 +9,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'scrooloose/syntastic'
-"Plugin 'Valoric/YouCompleteMe'
-"Plugin 'marijnh/tern_for_vim'
 Plugin 'vim-perl/vim-perl'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'burnettk/vim-angular'
@@ -18,6 +16,7 @@ Plugin 'klen/python-mode'
 Plugin 'mattn/emmet-vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Yggdroot/indentLine'
+Plugin 'wellle/tmux-complete.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -43,6 +42,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['html'] }
 
+let g:tmuxcomplete#trigger = 'completefunc'
+
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
-autocmd FileType perl set equalprg=perltidy
