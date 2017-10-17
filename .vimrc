@@ -4,19 +4,33 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'scrooloose/nerdtree'
+
+Plugin 'scrooloose/syntastic'
+
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-perl/vim-perl'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'burnettk/vim-angular'
+
+Plugin 'vim-perl/vim-perl'
+
 Plugin 'klen/python-mode'
+
 Plugin 'mattn/emmet-vim'
+
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Yggdroot/indentLine'
+
 Plugin 'wellle/tmux-complete.vim'
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} 
+Plugin 'bling/vim-airline'
 call vundle#end()
 
 filetype plugin indent on
@@ -26,8 +40,9 @@ set expandtab
 
 
 set number
-colorscheme molokai
+colorscheme molokaimod
 syntax on
+syntax enable
 
 set guifont=Monaco:h14
 
@@ -43,6 +58,10 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['html'] }
 
 let g:tmuxcomplete#trigger = 'completefunc'
+
+inoremap {<cr> {<cr>}<c-o>O
+inoremap [<cr> [<cr>]<c-o>O
+inoremap (<cr> (<cr>)<c-o>O
 
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
